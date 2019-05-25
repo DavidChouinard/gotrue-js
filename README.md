@@ -80,7 +80,10 @@ Also, make sure the `Registration preferences` under `Identity settings` in your
 
 ![registration preferences](src/images/identity-settings-registration.png)
 
-If the registration preferences is set to be `Invite only`, you'll get an error message like this:
+If the registration preferences is set to be `
+
+
+e only`, you'll get an error message like this:
 `{code: 403, msg: 'Signups not allowed for this instance'}`
 
 ### Confirm a new user signup
@@ -606,7 +609,7 @@ Example response object:
 
 ### Invite a user
 
-To invite a user using the admin token, do a `POST` request to `/invite` endpoint.
+To invite a user using the admin token, do a `POST` request to `/invite` endpoint. It's not possible to set `user_metadata` or `app_metadata` until a user has been created.
 
 Example usage:
 
@@ -647,12 +650,7 @@ Example response:
   "email": "example@example.com",
   "invited_at": "2018-05-25T20:28:04.436230023Z",
   "app_metadata": {
-    "roles": [
-    "admin",
-    "test",
-    "second-test-role",
-    "third"
-    ]
+    "provider": "email"
   },
   "user_metadata": null,
   "created_at": "2018-05-25T20:28:03.684905861Z",
